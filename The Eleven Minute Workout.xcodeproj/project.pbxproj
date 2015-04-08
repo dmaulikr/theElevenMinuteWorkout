@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81B428311AD5717A00CCC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B428301AD5717A00CCC7DE /* AppDelegate.swift */; };
+		81B428341AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */; };
+		81B428361AD5717A00CCC7DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B428351AD5717A00CCC7DE /* ViewController.swift */; };
+		81B428391AD5717A00CCC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B428371AD5717A00CCC7DE /* Main.storyboard */; };
+		81B4283B1AD5717A00CCC7DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B4283A1AD5717A00CCC7DE /* Images.xcassets */; };
+		81B4283E1AD5717A00CCC7DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */; };
+		81B4284A1AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81B428441AD5717A00CCC7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81B428231AD5717A00CCC7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B4282A1AD5717A00CCC7DE;
+			remoteInfo = "The Eleven Minute Workout";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Eleven Minute Workout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B4282F1AD5717A00CCC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B428301AD5717A00CCC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Eleven_Minute_Workout.xcdatamodel; sourceTree = "<group>"; };
+		81B428351AD5717A00CCC7DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81B428381AD5717A00CCC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81B4283A1AD5717A00CCC7DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		81B4283D1AD5717A00CCC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Eleven Minute WorkoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B428481AD5717A00CCC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Eleven_Minute_WorkoutTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81B428281AD5717A00CCC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B428401AD5717A00CCC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81B428221AD5717A00CCC7DE = {
+			isa = PBXGroup;
+			children = (
+				81B4282D1AD5717A00CCC7DE /* The Eleven Minute Workout */,
+				81B428461AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */,
+				81B4282C1AD5717A00CCC7DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81B4282C1AD5717A00CCC7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */,
+				81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81B4282D1AD5717A00CCC7DE /* The Eleven Minute Workout */ = {
+			isa = PBXGroup;
+			children = (
+				81B428301AD5717A00CCC7DE /* AppDelegate.swift */,
+				81B428351AD5717A00CCC7DE /* ViewController.swift */,
+				81B428371AD5717A00CCC7DE /* Main.storyboard */,
+				81B4283A1AD5717A00CCC7DE /* Images.xcassets */,
+				81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */,
+				81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */,
+				81B4282E1AD5717A00CCC7DE /* Supporting Files */,
+			);
+			path = "The Eleven Minute Workout";
+			sourceTree = "<group>";
+		};
+		81B4282E1AD5717A00CCC7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81B4282F1AD5717A00CCC7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81B428461AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */,
+				81B428471AD5717A00CCC7DE /* Supporting Files */,
+			);
+			path = "The Eleven Minute WorkoutTests";
+			sourceTree = "<group>";
+		};
+		81B428471AD5717A00CCC7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81B428481AD5717A00CCC7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B4284D1AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute Workout" */;
+			buildPhases = (
+				81B428271AD5717A00CCC7DE /* Sources */,
+				81B428281AD5717A00CCC7DE /* Frameworks */,
+				81B428291AD5717A00CCC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Eleven Minute Workout";
+			productName = "The Eleven Minute Workout";
+			productReference = 81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81B428421AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B428501AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute WorkoutTests" */;
+			buildPhases = (
+				81B4283F1AD5717A00CCC7DE /* Sources */,
+				81B428401AD5717A00CCC7DE /* Frameworks */,
+				81B428411AD5717A00CCC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81B428451AD5717A00CCC7DE /* PBXTargetDependency */,
+			);
+			name = "The Eleven Minute WorkoutTests";
+			productName = "The Eleven Minute WorkoutTests";
+			productReference = 81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81B428231AD5717A00CCC7DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Whitney Powell";
+				TargetAttributes = {
+					81B4282A1AD5717A00CCC7DE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					81B428421AD5717A00CCC7DE = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 81B4282A1AD5717A00CCC7DE;
+					};
+				};
+			};
+			buildConfigurationList = 81B428261AD5717A00CCC7DE /* Build configuration list for PBXProject "The Eleven Minute Workout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81B428221AD5717A00CCC7DE;
+			productRefGroup = 81B4282C1AD5717A00CCC7DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */,
+				81B428421AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81B428291AD5717A00CCC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B428391AD5717A00CCC7DE /* Main.storyboard in Resources */,
+				81B4283E1AD5717A00CCC7DE /* LaunchScreen.xib in Resources */,
+				81B4283B1AD5717A00CCC7DE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B428411AD5717A00CCC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81B428271AD5717A00CCC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B428361AD5717A00CCC7DE /* ViewController.swift in Sources */,
+				81B428341AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld in Sources */,
+				81B428311AD5717A00CCC7DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B4283F1AD5717A00CCC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B4284A1AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81B428451AD5717A00CCC7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */;
+			targetProxy = 81B428441AD5717A00CCC7DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		81B428371AD5717A00CCC7DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81B428381AD5717A00CCC7DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81B4283D1AD5717A00CCC7DE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81B4284B1AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81B4284C1AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81B4284E1AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "The Eleven Minute Workout/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		81B4284F1AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "The Eleven Minute Workout/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		81B428511AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The Eleven Minute WorkoutTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Eleven Minute Workout.app/The Eleven Minute Workout";
+			};
+			name = Debug;
+		};
+		81B428521AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The Eleven Minute WorkoutTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Eleven Minute Workout.app/The Eleven Minute Workout";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81B428261AD5717A00CCC7DE /* Build configuration list for PBXProject "The Eleven Minute Workout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B4284B1AD5717A00CCC7DE /* Debug */,
+				81B4284C1AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81B4284D1AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute Workout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B4284E1AD5717A00CCC7DE /* Debug */,
+				81B4284F1AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		81B428501AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute WorkoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B428511AD5717A00CCC7DE /* Debug */,
+				81B428521AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */,
+			);
+			currentVersion = 81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */;
+			path = The_Eleven_Minute_Workout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 81B428231AD5717A00CCC7DE /* Project object */;
+}
