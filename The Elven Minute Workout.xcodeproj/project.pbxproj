@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81073CC71B29D65200876D70 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81073CC61B29D65200876D70 /* Timer.swift */; };
+		81073CC91B31BDE500876D70 /* CountUpTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81073CC81B31BDE500876D70 /* CountUpTimer.swift */; };
+		810C78DF1B388958004248E4 /* HowToUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C78DE1B388958004248E4 /* HowToUse.swift */; };
+		810C78E11B3C7C12004248E4 /* old-clock-ticking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 810C78E01B3C7C12004248E4 /* old-clock-ticking.wav */; };
+		810C78E31B3DD24E004248E4 /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = 810C78E21B3DD24E004248E4 /* success.wav */; };
+		811539D31C75073B000AF0C4 /* SmoothCountdownCircle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 811539D21C75073B000AF0C4 /* SmoothCountdownCircle.xib */; };
+		811539D51C75077F000AF0C4 /* SmoothCountdownCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811539D41C75077F000AF0C4 /* SmoothCountdownCircleView.swift */; };
+		811637491AE161C800276B4D /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811637481AE161C800276B4D /* Definitions.swift */; };
+		811991C71AF3C0D30083967D /* CompletedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811991C61AF3C0D30083967D /* CompletedWorkout.swift */; };
+		815C23121AF7C0DC00C5A9C1 /* ProgressPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C23111AF7C0DC00C5A9C1 /* ProgressPage.swift */; };
+		815C23141AF7C0F800C5A9C1 /* ProgressDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C23131AF7C0F800C5A9C1 /* ProgressDatasource.swift */; };
+		815C23161AFA645700C5A9C1 /* CirclePercentageChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C23151AFA645700C5A9C1 /* CirclePercentageChart.swift */; };
+		815C23181AFA677200C5A9C1 /* SquareColorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C23171AFA677200C5A9C1 /* SquareColorIcon.swift */; };
+		815C231A1AFA7E7800C5A9C1 /* BarChartProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C23191AFA7E7700C5A9C1 /* BarChartProgressViewController.swift */; };
+		815C231C1AFA86BA00C5A9C1 /* VerticalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C231B1AFA86BA00C5A9C1 /* VerticalBarChart.swift */; };
+		81787C671BA1D1EF00EFD32F /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81787C661BA1D1EE00EFD32F /* PlaylistViewController.swift */; };
+		81B428311AD5717A00CCC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B428301AD5717A00CCC7DE /* AppDelegate.swift */; };
+		81B428341AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */; };
+		81B428391AD5717A00CCC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B428371AD5717A00CCC7DE /* Main.storyboard */; };
+		81B4283B1AD5717A00CCC7DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B4283A1AD5717A00CCC7DE /* Images.xcassets */; };
+		81B4283E1AD5717A00CCC7DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */; };
+		81B4284A1AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */; };
+		81CAC4A31ADBECD600F1BEE1 /* CountDownTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A21ADBECD600F1BEE1 /* CountDownTimerVC.swift */; };
+		81CAC4A51ADD7C0500F1BEE1 /* IndividualLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A41ADD7C0500F1BEE1 /* IndividualLevel.swift */; };
+		81CAC4A71ADD7DC000F1BEE1 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A61ADD7DC000F1BEE1 /* PageController.swift */; };
+		81E7A2AD1C6933C70055A820 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2AC1C6933C70055A820 /* Exercise.swift */; };
+		81E7A2AF1C6934680055A820 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2AE1C6934680055A820 /* Workout.swift */; };
+		81E7A2B11C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2B01C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift */; };
+		81E7A2B41C6A857F0055A820 /* G11_W1_E1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E7A2B31C6A857F0055A820 /* G11_W1_E1.plist */; };
+		81E7A2B81C6A88410055A820 /* G11_W1_E2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E7A2B71C6A88410055A820 /* G11_W1_E2.plist */; };
+		81E7A2BA1C6D16480055A820 /* Exercise Resume Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2B91C6D16480055A820 /* Exercise Resume Helper.swift */; };
+		81E7A2BC1C6D165A0055A820 /* 7Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2BB1C6D165A0055A820 /* 7Exercise.swift */; };
+		81E7A2BE1C6D16C20055A820 /* 7Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2BD1C6D16C20055A820 /* 7Overview.swift */; };
+		81EA31C81B69184500E155F6 /* RecordResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA31C71B69184500E155F6 /* RecordResultsViewController.swift */; };
+		81F3F5991AE81841006FD057 /* ExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3F5981AE81841006FD057 /* ExerciseInfo.swift */; };
+		81FBF1B01B068E2100C76035 /* Best_Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF1AF1B068E2100C76035 /* Best_Workouts.swift */; };
+		81FBF1B21B0A370E00C76035 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF1B11B0A370E00C76035 /* Workouts.swift */; };
+		81FBF1B41B0B7FB400C76035 /* SetNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBF1B31B0B7FB300C76035 /* SetNotificationsViewController.swift */; };
+		81FE1FA51AD585B000F75294 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE1FA41AD585B000F75294 /* Menu.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81B428441AD5717A00CCC7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81B428231AD5717A00CCC7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B4282A1AD5717A00CCC7DE;
+			remoteInfo = "The Eleven Minute Workout";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		81073CC61B29D65200876D70 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = ../Timer.swift; sourceTree = "<group>"; };
+		81073CC81B31BDE500876D70 /* CountUpTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountUpTimer.swift; path = ../CountUpTimer.swift; sourceTree = "<group>"; };
+		810C78DE1B388958004248E4 /* HowToUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToUse.swift; sourceTree = "<group>"; };
+		810C78E01B3C7C12004248E4 /* old-clock-ticking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "old-clock-ticking.wav"; path = "../old-clock-ticking.wav"; sourceTree = "<group>"; };
+		810C78E21B3DD24E004248E4 /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success.wav; path = ../success.wav; sourceTree = "<group>"; };
+		811539D21C75073B000AF0C4 /* SmoothCountdownCircle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmoothCountdownCircle.xib; sourceTree = "<group>"; };
+		811539D41C75077F000AF0C4 /* SmoothCountdownCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothCountdownCircleView.swift; sourceTree = "<group>"; };
+		811637481AE161C800276B4D /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		811991C61AF3C0D30083967D /* CompletedWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedWorkout.swift; sourceTree = "<group>"; };
+		815C23111AF7C0DC00C5A9C1 /* ProgressPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPage.swift; sourceTree = "<group>"; };
+		815C23131AF7C0F800C5A9C1 /* ProgressDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDatasource.swift; sourceTree = "<group>"; };
+		815C23151AFA645700C5A9C1 /* CirclePercentageChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePercentageChart.swift; sourceTree = "<group>"; };
+		815C23171AFA677200C5A9C1 /* SquareColorIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareColorIcon.swift; sourceTree = "<group>"; };
+		815C23191AFA7E7700C5A9C1 /* BarChartProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartProgressViewController.swift; sourceTree = "<group>"; };
+		815C231B1AFA86BA00C5A9C1 /* VerticalBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBarChart.swift; sourceTree = "<group>"; };
+		81787C661BA1D1EE00EFD32F /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = ../PlaylistViewController.swift; sourceTree = "<group>"; };
+		81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Eleven Minute Workout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B4282F1AD5717A00CCC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B428301AD5717A00CCC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Eleven_Minute_Workout.xcdatamodel; sourceTree = "<group>"; };
+		81B428381AD5717A00CCC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81B4283A1AD5717A00CCC7DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		81B4283D1AD5717A00CCC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Eleven Minute WorkoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B428481AD5717A00CCC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Eleven_Minute_WorkoutTests.swift; sourceTree = "<group>"; };
+		81CAC4A21ADBECD600F1BEE1 /* CountDownTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerVC.swift; sourceTree = "<group>"; };
+		81CAC4A41ADD7C0500F1BEE1 /* IndividualLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualLevel.swift; sourceTree = "<group>"; };
+		81CAC4A61ADD7DC000F1BEE1 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		81E7A2AC1C6933C70055A820 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		81E7A2AE1C6934680055A820 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		81E7A2B01C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 11MinuteWorkoutStandardViewController.swift; sourceTree = "<group>"; };
+		81E7A2B31C6A857F0055A820 /* G11_W1_E1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = G11_W1_E1.plist; sourceTree = "<group>"; };
+		81E7A2B71C6A88410055A820 /* G11_W1_E2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = G11_W1_E2.plist; sourceTree = "<group>"; };
+		81E7A2B91C6D16480055A820 /* Exercise Resume Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise Resume Helper.swift"; sourceTree = "<group>"; };
+		81E7A2BB1C6D165A0055A820 /* 7Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 7Exercise.swift; sourceTree = "<group>"; };
+		81E7A2BD1C6D16C20055A820 /* 7Overview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 7Overview.swift; sourceTree = "<group>"; };
+		81EA31C71B69184500E155F6 /* RecordResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordResultsViewController.swift; sourceTree = "<group>"; };
+		81F3F5981AE81841006FD057 /* ExerciseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseInfo.swift; sourceTree = "<group>"; };
+		81FBF1AF1B068E2100C76035 /* Best_Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Best_Workouts.swift; path = ../Best_Workouts.swift; sourceTree = "<group>"; };
+		81FBF1B11B0A370E00C76035 /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workouts.swift; path = ../Workouts.swift; sourceTree = "<group>"; };
+		81FBF1B31B0B7FB300C76035 /* SetNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNotificationsViewController.swift; sourceTree = "<group>"; };
+		81FE1FA41AD585B000F75294 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81B428281AD5717A00CCC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B428401AD5717A00CCC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		811539D11C75070C000AF0C4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				811539D21C75073B000AF0C4 /* SmoothCountdownCircle.xib */,
+				811539D41C75077F000AF0C4 /* SmoothCountdownCircleView.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		81B428221AD5717A00CCC7DE = {
+			isa = PBXGroup;
+			children = (
+				81B4282D1AD5717A00CCC7DE /* The Eleven Minute Workout */,
+				81B428461AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */,
+				81B4282C1AD5717A00CCC7DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81B4282C1AD5717A00CCC7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */,
+				81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81B4282D1AD5717A00CCC7DE /* The Eleven Minute Workout */ = {
+			isa = PBXGroup;
+			children = (
+				811539D11C75070C000AF0C4 /* Custom Views */,
+				81E7A2B21C6A83290055A820 /* Workout Group */,
+				81787C661BA1D1EE00EFD32F /* PlaylistViewController.swift */,
+				81FBF1AF1B068E2100C76035 /* Best_Workouts.swift */,
+				81FBF1B11B0A370E00C76035 /* Workouts.swift */,
+				81073CC61B29D65200876D70 /* Timer.swift */,
+				81073CC81B31BDE500876D70 /* CountUpTimer.swift */,
+				81B428301AD5717A00CCC7DE /* AppDelegate.swift */,
+				81B428371AD5717A00CCC7DE /* Main.storyboard */,
+				810C78DE1B388958004248E4 /* HowToUse.swift */,
+				81FBF1B31B0B7FB300C76035 /* SetNotificationsViewController.swift */,
+				815C23151AFA645700C5A9C1 /* CirclePercentageChart.swift */,
+				81B4283A1AD5717A00CCC7DE /* Images.xcassets */,
+				81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */,
+				81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */,
+				81B4282E1AD5717A00CCC7DE /* Supporting Files */,
+				81FE1FA41AD585B000F75294 /* Menu.swift */,
+				81CAC4A41ADD7C0500F1BEE1 /* IndividualLevel.swift */,
+				81CAC4A61ADD7DC000F1BEE1 /* PageController.swift */,
+				811637481AE161C800276B4D /* Definitions.swift */,
+				81F3F5981AE81841006FD057 /* ExerciseInfo.swift */,
+				811991C61AF3C0D30083967D /* CompletedWorkout.swift */,
+				815C23111AF7C0DC00C5A9C1 /* ProgressPage.swift */,
+				815C23131AF7C0F800C5A9C1 /* ProgressDatasource.swift */,
+				815C23171AFA677200C5A9C1 /* SquareColorIcon.swift */,
+				815C23191AFA7E7700C5A9C1 /* BarChartProgressViewController.swift */,
+				815C231B1AFA86BA00C5A9C1 /* VerticalBarChart.swift */,
+				81EA31C71B69184500E155F6 /* RecordResultsViewController.swift */,
+			);
+			path = "The Eleven Minute Workout";
+			sourceTree = "<group>";
+		};
+		81B4282E1AD5717A00CCC7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				810C78E01B3C7C12004248E4 /* old-clock-ticking.wav */,
+				810C78E21B3DD24E004248E4 /* success.wav */,
+				81B4282F1AD5717A00CCC7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81B428461AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				81B428491AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift */,
+				81B428471AD5717A00CCC7DE /* Supporting Files */,
+			);
+			path = "The Eleven Minute WorkoutTests";
+			sourceTree = "<group>";
+		};
+		81B428471AD5717A00CCC7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81B428481AD5717A00CCC7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81E7A2B21C6A83290055A820 /* Workout Group */ = {
+			isa = PBXGroup;
+			children = (
+				81E7A2B61C6A88120055A820 /* Individual Exercises plist */,
+				81CAC4A21ADBECD600F1BEE1 /* CountDownTimerVC.swift */,
+				81E7A2B01C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift */,
+				81E7A2AC1C6933C70055A820 /* Exercise.swift */,
+				81E7A2AE1C6934680055A820 /* Workout.swift */,
+				81E7A2B91C6D16480055A820 /* Exercise Resume Helper.swift */,
+				81E7A2BB1C6D165A0055A820 /* 7Exercise.swift */,
+				81E7A2BD1C6D16C20055A820 /* 7Overview.swift */,
+			);
+			name = "Workout Group";
+			sourceTree = "<group>";
+		};
+		81E7A2B61C6A88120055A820 /* Individual Exercises plist */ = {
+			isa = PBXGroup;
+			children = (
+				81E7A2B31C6A857F0055A820 /* G11_W1_E1.plist */,
+				81E7A2B71C6A88410055A820 /* G11_W1_E2.plist */,
+			);
+			name = "Individual Exercises plist";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B4284D1AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute Workout" */;
+			buildPhases = (
+				81B428271AD5717A00CCC7DE /* Sources */,
+				81B428281AD5717A00CCC7DE /* Frameworks */,
+				81B428291AD5717A00CCC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Eleven Minute Workout";
+			productName = "The Eleven Minute Workout";
+			productReference = 81B4282B1AD5717A00CCC7DE /* The Eleven Minute Workout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81B428421AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B428501AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute WorkoutTests" */;
+			buildPhases = (
+				81B4283F1AD5717A00CCC7DE /* Sources */,
+				81B428401AD5717A00CCC7DE /* Frameworks */,
+				81B428411AD5717A00CCC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81B428451AD5717A00CCC7DE /* PBXTargetDependency */,
+			);
+			name = "The Eleven Minute WorkoutTests";
+			productName = "The Eleven Minute WorkoutTests";
+			productReference = 81B428431AD5717A00CCC7DE /* The Eleven Minute WorkoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81B428231AD5717A00CCC7DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Whitney Powell";
+				TargetAttributes = {
+					81B4282A1AD5717A00CCC7DE = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = X3QK255733;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+					81B428421AD5717A00CCC7DE = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 81B4282A1AD5717A00CCC7DE;
+					};
+				};
+			};
+			buildConfigurationList = 81B428261AD5717A00CCC7DE /* Build configuration list for PBXProject "The Elven Minute Workout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81B428221AD5717A00CCC7DE;
+			productRefGroup = 81B4282C1AD5717A00CCC7DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */,
+				81B428421AD5717A00CCC7DE /* The Eleven Minute WorkoutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81B428291AD5717A00CCC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				810C78E31B3DD24E004248E4 /* success.wav in Resources */,
+				81E7A2B41C6A857F0055A820 /* G11_W1_E1.plist in Resources */,
+				81B428391AD5717A00CCC7DE /* Main.storyboard in Resources */,
+				81E7A2B81C6A88410055A820 /* G11_W1_E2.plist in Resources */,
+				81B4283E1AD5717A00CCC7DE /* LaunchScreen.xib in Resources */,
+				81B4283B1AD5717A00CCC7DE /* Images.xcassets in Resources */,
+				810C78E11B3C7C12004248E4 /* old-clock-ticking.wav in Resources */,
+				811539D31C75073B000AF0C4 /* SmoothCountdownCircle.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B428411AD5717A00CCC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81B428271AD5717A00CCC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				815C23141AF7C0F800C5A9C1 /* ProgressDatasource.swift in Sources */,
+				81E7A2B11C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift in Sources */,
+				811637491AE161C800276B4D /* Definitions.swift in Sources */,
+				81CAC4A71ADD7DC000F1BEE1 /* PageController.swift in Sources */,
+				81FE1FA51AD585B000F75294 /* Menu.swift in Sources */,
+				81787C671BA1D1EF00EFD32F /* PlaylistViewController.swift in Sources */,
+				815C231A1AFA7E7800C5A9C1 /* BarChartProgressViewController.swift in Sources */,
+				810C78DF1B388958004248E4 /* HowToUse.swift in Sources */,
+				81FBF1B41B0B7FB400C76035 /* SetNotificationsViewController.swift in Sources */,
+				81FBF1B21B0A370E00C76035 /* Workouts.swift in Sources */,
+				815C23161AFA645700C5A9C1 /* CirclePercentageChart.swift in Sources */,
+				81B428341AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld in Sources */,
+				81E7A2AD1C6933C70055A820 /* Exercise.swift in Sources */,
+				815C23121AF7C0DC00C5A9C1 /* ProgressPage.swift in Sources */,
+				81CAC4A51ADD7C0500F1BEE1 /* IndividualLevel.swift in Sources */,
+				81EA31C81B69184500E155F6 /* RecordResultsViewController.swift in Sources */,
+				81F3F5991AE81841006FD057 /* ExerciseInfo.swift in Sources */,
+				815C23181AFA677200C5A9C1 /* SquareColorIcon.swift in Sources */,
+				811539D51C75077F000AF0C4 /* SmoothCountdownCircleView.swift in Sources */,
+				811991C71AF3C0D30083967D /* CompletedWorkout.swift in Sources */,
+				81B428311AD5717A00CCC7DE /* AppDelegate.swift in Sources */,
+				81073CC91B31BDE500876D70 /* CountUpTimer.swift in Sources */,
+				81073CC71B29D65200876D70 /* Timer.swift in Sources */,
+				81CAC4A31ADBECD600F1BEE1 /* CountDownTimerVC.swift in Sources */,
+				815C231C1AFA86BA00C5A9C1 /* VerticalBarChart.swift in Sources */,
+				81E7A2AF1C6934680055A820 /* Workout.swift in Sources */,
+				81E7A2BE1C6D16C20055A820 /* 7Overview.swift in Sources */,
+				81E7A2BA1C6D16480055A820 /* Exercise Resume Helper.swift in Sources */,
+				81E7A2BC1C6D165A0055A820 /* 7Exercise.swift in Sources */,
+				81FBF1B01B068E2100C76035 /* Best_Workouts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B4283F1AD5717A00CCC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B4284A1AD5717A00CCC7DE /* The_Eleven_Minute_WorkoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81B428451AD5717A00CCC7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81B4282A1AD5717A00CCC7DE /* The Eleven Minute Workout */;
+			targetProxy = 81B428441AD5717A00CCC7DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		81B428371AD5717A00CCC7DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81B428381AD5717A00CCC7DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		81B4283C1AD5717A00CCC7DE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81B4283D1AD5717A00CCC7DE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81B4284B1AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81B4284C1AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81B4284E1AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "The Eleven Minute Workout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.theapp.witApps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81B4284F1AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "The Eleven Minute Workout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.theapp.witApps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		81B428511AD5717A00CCC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The Eleven Minute WorkoutTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.theapp.witApps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Eleven Minute Workout.app/The Eleven Minute Workout";
+			};
+			name = Debug;
+		};
+		81B428521AD5717A00CCC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "The Eleven Minute WorkoutTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.theapp.witApps.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Eleven Minute Workout.app/The Eleven Minute Workout";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81B428261AD5717A00CCC7DE /* Build configuration list for PBXProject "The Elven Minute Workout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B4284B1AD5717A00CCC7DE /* Debug */,
+				81B4284C1AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81B4284D1AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute Workout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B4284E1AD5717A00CCC7DE /* Debug */,
+				81B4284F1AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81B428501AD5717A00CCC7DE /* Build configuration list for PBXNativeTarget "The Eleven Minute WorkoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B428511AD5717A00CCC7DE /* Debug */,
+				81B428521AD5717A00CCC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81B428321AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */,
+			);
+			currentVersion = 81B428331AD5717A00CCC7DE /* The_Eleven_Minute_Workout.xcdatamodel */;
+			path = The_Eleven_Minute_Workout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 81B428231AD5717A00CCC7DE /* Project object */;
+}

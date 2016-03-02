@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Toe Touches with Backbend</string>
+	<key>Instructions</key>
+	<string>Stand feet astride, arms upward. Touch the floor and stretch upward into a backward bend. Do not strain to keep your knees straight.</string>
+	<key>LengthInSeconds</key>
+	<integer>120</integer>
+	<key>MinimumScoreForGrade</key>
+	<array>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>6</integer>
+		<integer>7</integer>
+		<integer>8</integer>
+		<integer>10</integer>
+		<integer>12</integer>
+		<integer>14</integer>
+		<integer>16</integer>
+		<integer>18</integer>
+		<integer>20</integer>
+	</array>
+</dict>
+</plist>
