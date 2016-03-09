@@ -11,10 +11,11 @@ import CoreData
 import Foundation
 import AVFoundation
 
-class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopoverPresentationControllerDelegate, ExerciseDatabaseProtocol {
+class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopoverPresentationControllerDelegate, ExerciseDatabaseProtocol, _11MinuteWorkoutStopAnimationProtocol {
     // new stuff begins
     let exerciseResumeHelper = ExerciseResumeHelper()
-    
+    let soundHelper = SoundHelper()
+    let stopAnimation = StopAnimation()
     // new stuff ends
     
     var workoutIndex = 1 
@@ -28,13 +29,9 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
     private let buttonStartTag = 0
     private let buttonPauseTag = 1
     private var comingFromExerciseOverview = false
-    private var tickingSound:AVAudioPlayer?
-    private var successSound = AVAudioPlayer()
-    private var soundOn = true
     var exerciseViewController:ExerciseOverviewViewController? = nil
     private var displayedAsPopover = false
     private var exiting = false
-    //private var haveCheckedForResume = false
 
     @IBAction func exitExerciseOverview(segue:UIStoryboardSegue) {
         comingFromExerciseOverview = true
@@ -51,12 +48,6 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         comingFromExerciseOverview = true
     }
     
-    func setupAudioPlayer(fileName:String, fileExtension:String) -> AVAudioPlayer {
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: fileExtension)
-        let url = NSURL.fileURLWithPath(path!)
-        //var error:NSError?'
-        return try! AVAudioPlayer(contentsOfURL: url)
-    }
     
     struct SegueIdentifiers {
         static let exerciseExplanationSegue = "show exercise overview"
@@ -65,24 +56,11 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         static let openPlaylistCreator = "open playlist creator"
     }
     
-    struct SoundFiles {
-        static let tickingSoundFile = "old-clock-ticking"
-        static let tickingSoundExtension = "wav"
-        static let successSoundFile = "success"
-        static let successSoundExtension = "wav"
-    }
-    
-    func getCurrentTime() -> Double{
+    func getCurrentTime() -> Double {
         if(currentExercise <= 5) {
             return clock.elapsedTime
         } else {
             return countUpTimer.elapsedTime
-        }
-    }
-    
-    func stopSoundIfItIsPlaying() {
-        if((tickingSound?.playing) != nil) {
-            tickingSound!.stop()
         }
     }
     
@@ -93,7 +71,7 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
             countUpTimer.pauseWithoutEndingWorkout()
         }
         updateToStartState(startStopButton)
-        exerciseImage.stopAnimating()
+        stopAnimation.stopAnimating()
     }
     
     func prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController) {
@@ -108,7 +86,7 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
                 if let exerciseOverviewController = segue.destinationViewController as? ExerciseOverviewViewController {
                     exerciseOverviewController.popoverPresentationController!.delegate = self
                     pauseTimerWithoutEndingWorkout()
-                    stopSoundIfItIsPlaying()
+                    soundHelper.stopSoundIfItIsPlaying()
                     exerciseOverviewController.chartIndex = workoutIndex
                     exerciseOverviewController.exerciseIndex = currentExercise
                     exerciseOverviewController.currentExerciseTime = getCurrentTime()
@@ -116,8 +94,7 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
                 }
             case SegueIdentifiers.cancelWorkoutSegue:
                 exiting = true
-                stopSoundIfItIsPlaying()
-                soundOn = false // locally turn off sound, so it doesn't play while view controller is being removed from the view hierarchy
+                soundHelper.turnOffSound() // locally turn off sound, so it doesn't play while view controller is being removed from the view hierarchy, can we use stopsoundifitisplaying here? why not?
             case SegueIdentifiers.recordResultsSegue:
                 if let resultsController = segue.destinationViewController as? RecordResultsViewController {
                     if(exerciseViewController != nil && exerciseViewController!.isViewLoaded()) { // close the overview controller if it is still open
@@ -126,13 +103,14 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
                     resultsController.currentExercise = currentExercise
                     resultsController.currentWorkout = workoutIndex
                     resultsController.alternateExerciseTime = countUpTimer.elapsedTime
-                    resultsController.soundOn = soundOn
-                    resultsController.successSound = successSound
+                    let soundValues = soundHelper.getValuesForResultsController()
+                    resultsController.soundOn = soundValues.1
+                    resultsController.successSound = soundValues.0
                 }
             case SegueIdentifiers.openPlaylistCreator:
                 if let playlistController = segue.destinationViewController as? PlaylistViewController {
                     pauseTimerWithoutEndingWorkout()
-                    stopSoundIfItIsPlaying()
+                    soundHelper.stopSoundIfItIsPlaying()
                     playlistController.exerciseIndex = currentExercise
                     playlistController.currentExerciseTime = getCurrentTime()
                 }
@@ -142,27 +120,13 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         }
     }
     
-    private func setUpExerciseImageAnimation(exercise:Int) {
-        var exerciseSteps = [UIImage]()
-        var thisExerciseIndex = 1
-        while(true) {
-            let workoutName:String = "chart_" + String(workoutIndex) + "_exercise_" + String(exercise) + "_image_" + String(thisExerciseIndex)
-            let nextImage = UIImage(named:workoutName)
-            if((nextImage) != nil) {
-                exerciseSteps.append(nextImage!)
-            } else {
-                break
-            }
-            thisExerciseIndex++
-        }
-        exerciseImage.animationImages = exerciseSteps
-        exerciseImage.animationDuration = Double(thisExerciseIndex*2)
-        exerciseImage.animationRepeatCount = 10000
-    }
-    
     @IBOutlet weak var alternateExerciseSegmentedControl: UISegmentedControl!
     @IBOutlet weak var countDownTimerView: UIView!
-    @IBOutlet weak var exerciseImage: UIImageView! 
+    @IBOutlet weak var exerciseImage: UIImageView! {
+        didSet {
+            stopAnimation.setup(self.exerciseImage, delegate: self)
+        }
+    }
     @IBOutlet weak var upNextLabel: UILabel!
     @IBOutlet weak var workoutName: UILabel!
     @IBOutlet weak var timer: UILabel!
@@ -194,17 +158,17 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         switch sender.selectedSegmentIndex {
         case 0:
             currentExercise = 5
-            loadExerciseImage(5)
+            stopAnimation.loadExerciseImage(5,workoutIndex:workoutIndex,currentExercise:currentExercise)
             setTimerText("6:00")
             entireCircle.strokeStart = 0
             entireCircle.strokeEnd = 1.0
         case 1:
             currentExercise = 6
-            loadRunOrWalkImage(6)
+            stopAnimation.loadRunOrWalkImage(6)
             setTimerText("0:00")
         case 2:
             currentExercise = 7
-            loadRunOrWalkImage(7)
+            stopAnimation.loadRunOrWalkImage(7)
             setTimerText("0:00")
         default:
             print("")
@@ -214,7 +178,7 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
 
     func confirmStopWorkout(sender:UISegmentedControl) {
         pauseTimerWithoutEndingWorkout()
-        stopSoundIfItIsPlaying()
+        soundHelper.stopSoundIfItIsPlaying()
         let stopWorkoutAlert = UIAlertController(title: "Stop Exercise", message: "Switching exercises will stop your current exercise. Would you like to continue?", preferredStyle: UIAlertControllerStyle.Alert)
         (stopWorkoutAlert.view).tintColor = convertHexToUIColor(0x65, green: 0x7c, blue: 0x92)
         stopWorkoutAlert.popoverPresentationController?.sourceView = self.view
@@ -270,51 +234,41 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
     }
     
     func startTicking() {
-        if(soundOn) {
-            tickingSound!.play()
-        }
+        soundHelper.startTicking()
     }
     
     func stopTicking() {
-        if(soundOn) { tickingSound!.stop() }
+        soundHelper.stopTicking()
     }
    
+    func startButtonTransitionHasFinished() {
+        if(self.exerciseViewController == nil) {
+            // start the timer unless the user has opened the exercise info popup during the animation
+            // also, check that we haven't paused it in the meantime
+            if(startStopButton.tag != self.buttonStartTag) {self.startTimer() }
+        }
+    }
+    
     func flipStartStopButton(button: UIButton) {
         if(button.tag == buttonStartTag) {
             updateToPauseState(button)
             if(currentExercise <= 5) {
-                UIView.transitionWithView(exerciseImage, duration: 2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.exerciseImage.startAnimating() }, completion:{
-                    (Bool) in
-                    if(self.exerciseViewController == nil) {
-                        // start the timer unless the user has opened the exercise info popup during the animation
-                        // also, check that we haven't paused it in the meantime
-                        if(button.tag != self.buttonStartTag) {self.startTimer() }
-                    }
-                })
+                stopAnimation.runAnimationOnExerciseImageWhenStartButtonPressed()
             } else {
                 startTimer()
             }
         } else {
             updateToStartState(button)
             pauseTimer()
-            if((tickingSound?.playing) != nil) { stopTicking() }
+            soundHelper.stopSoundIfItIsPlaying()
             if(currentExercise <= 5) {
-                UIView.transitionWithView(exerciseImage, duration: 2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.exerciseImage.stopAnimating() }, completion: nil)
+                stopAnimation.runAnimationOnExerciseImageWhenPauseButtonPressed()
             }
             
         }
     }
-
-//    func save() {
-//        do {
-//            try managedObjectContext!.save()
-//        } catch {
-//            print("did not save")
-//        }
-//    }
     
     func getElapsedTimeAsString(elapsedTime:Double) -> String{
-        //var time = elapsedTime
         let minutes = Int(elapsedTime/60)
         let seconds = Int(elapsedTime - Double(minutes * 60))
         return minutes.description + ":" + (seconds > 9 ? String(seconds) : "0" + String(seconds))
@@ -368,25 +322,6 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         view.layer.addSublayer(circle)
     }
     
-    private func loadRunOrWalkImage(exercise:Int) {
-        let nextExerciseImage = exercise == 6 ? UIImage(named: RunAndWalkImageNames.runImageName) : UIImage(named: RunAndWalkImageNames.walkImageName)
-        UIView.transitionWithView(exerciseImage, duration: 1, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.exerciseImage.image = nextExerciseImage }, completion: nil)
-    }
-    
-    private func loadExerciseImage(exercise:Int) {
-        switch currentExercise {
-        case 1,2,3,4,5:
-            let nextExerciseImage = UIImage(named: "chart_" + String(workoutIndex) + "_exercise_" + String(exercise))
-            UIView.transitionWithView(exerciseImage, duration: 2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.exerciseImage.image = nextExerciseImage }, completion: nil)
-        case 6:
-            loadRunOrWalkImage(6)
-        case 7:
-            loadRunOrWalkImage(7)
-        default:
-            break
-        }
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let centerPoint = CGPoint(x:countDownTimerView!.bounds.width/2,y:countDownTimerView!.bounds.height/2)
@@ -416,27 +351,6 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         )
     }
     
-    func setUpSounds() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let soundShouldBeOn = userDefaults.stringForKey("soundPreference") {
-            if(soundShouldBeOn == "yes") {
-                soundOn = true
-                tickingSound = setupAudioPlayer(SoundFiles.tickingSoundFile,fileExtension:SoundFiles.tickingSoundExtension)
-                tickingSound?.volume = 1.0
-                successSound = setupAudioPlayer(SoundFiles.successSoundFile, fileExtension: SoundFiles.successSoundExtension)
-            } else {
-                soundOn = false
-            }
-        } else {
-            userDefaults.setObject("yes", forKey: "soundPreference")
-            soundOn = true
-            tickingSound = setupAudioPlayer(SoundFiles.tickingSoundFile,fileExtension:SoundFiles.tickingSoundExtension)
-            tickingSound?.volume = 1.0
-
-            successSound = setupAudioPlayer(SoundFiles.successSoundFile, fileExtension: SoundFiles.successSoundExtension)
-        }
-    }
-    
     func setTime() {
         if(currentExercise < 6) {
             clock.setTimerText(currentExercise)
@@ -447,7 +361,7 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSounds()
+        soundHelper.setUpSounds()
         
         clock.delegate = self
         countUpTimer.delegate = self
@@ -455,89 +369,22 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
         createCircleAndAddToView(entireCircle, view: countDownTimerView!, color: convertHexToUIColor(0xbd, green: 0xaf, blue: 0xa2), lineWidth: 8, strokeStart: 0, strokeEnd: 1)
         createCircleAndAddToView(progressCircle, view: countDownTimerView!, color: convertHexToUIColor(0x65, green: 0x7c, blue: 0x92), lineWidth: 8, strokeStart: 0, strokeEnd: 0)
         setTime()
-        setUpExerciseImageAnimation(currentExercise)
-        loadExerciseImage(currentExercise)
+        stopAnimation.setUpExerciseImageAnimation(currentExercise,workoutIndex: workoutIndex)
+        stopAnimation.loadExerciseImage(currentExercise,workoutIndex:workoutIndex,currentExercise:currentExercise)
         startStopButton.tag = 0
         updateWorkoutName(currentExercise)
         updateNextWorkoutName(currentExercise)
     }
     
-    // do an initial save of the workout index and date, to be used later by resume
-//    func saveInitialWorkoutData() {
-//        workoutDatabaseObject = NSEntityDescription.insertNewObjectForEntityForName("Workouts",inManagedObjectContext: self.managedObjectContext!) as? Workouts
-//        workoutDatabaseObject!.date = NSDate()
-//        workoutDatabaseObject!.workout_id = workoutIndex
-//        workoutDatabaseObject!.completed = false
-//        workoutDatabaseObject!.exercise_1_score = -1
-//        workoutDatabaseObject!.exercise_2_score = -1
-//        workoutDatabaseObject!.exercise_3_score = -1
-//        workoutDatabaseObject!.exercise_4_score = -1
-//        workoutDatabaseObject!.exercise_5_score = -1
-//        workoutDatabaseObject!.exercise_run_score = -1
-//        workoutDatabaseObject!.exercise_walk_score = -1
-//        save()
-//    }
-    
-//    func pickResumePlace(workout:Workouts) -> Int{
-//        if(workout.exercise_1_score == -1) { return 1 }
-//        if(workout.exercise_2_score == -1) { return 2 }
-//        if(workout.exercise_3_score == -1) { return 3 }
-//        if(workout.exercise_4_score == -1) { return 4 }
-//        if(workout.exercise_5_score == -1) { return 5 }
-//        if(workout.exercise_run_score == -1) { return 6 }
-//        if(workout.exercise_walk_score == -1) { return 7 }
-//        return 1
-//    }
-    
-//    private func checkForAndHandleResume() {
-//        let fetchRequest = NSFetchRequest(entityName: "Workouts")
-//        fetchRequest.predicate = NSPredicate(format: "completed == false AND workout_id == %d",workoutIndex)
-//        let fetchResults = (try? managedObjectContext!.executeFetchRequest(fetchRequest)) as? [Workouts]
-//        if(fetchResults?.count > 0) {
-//            for workout in fetchResults! {
-//                if(workout.workout_id.integerValue == workoutIndex && currentExercise == 1 && !exiting && !haveCheckedForResume) {
-//                    if(workout.exercise_1_score != -1) { // if you have done at least the first exercise
-//                        //Create an Alert for resume
-//                        let title = "Resume?"
-//                        let message = "Would you like to resume your last workout or start a new one? Starting a new workout will delete your uncompleted workout data."
-//                        let alert = UIAlertController(title:title,message: message,preferredStyle: UIAlertControllerStyle.Alert)
-//                        let newWorkoutAction = UIAlertAction(title: "Start a new workout", style: UIAlertActionStyle.Cancel, handler:{
-//                            (UIAlertAction) -> Void in
-//                            self.managedObjectContext!.deleteObject(workout)
-//                            self.saveInitialWorkoutData()
-//                        })
-//                        let resumeAction = UIAlertAction(title: "Resume the old workout", style: UIAlertActionStyle.Default, handler:{
-//                            (UIAlertAction) -> Void in
-//                            workout.date = NSDate()
-//                            self.currentExercise = self.pickResumePlace(workout)
-//                            self.getReadyForNextExercise(self.currentExercise)
-//                        })
-//                        alert.addAction(newWorkoutAction)
-//                        alert.addAction(resumeAction)
-//                        
-//                        presentViewController(alert, animated: true,completion: {})
-//                        break
-//                    } else {
-//                        // you haven't even done the first exercise, so delete the old workout data gracefully and create new workout data
-//                        self.managedObjectContext!.deleteObject(workout)
-//                        self.saveInitialWorkoutData()
-//                    }
-//                }
-//            }
-//        } else {
-//            saveInitialWorkoutData()
-//        }
-//        haveCheckedForResume = true
-//    }
-    
     func getReadyForNextExercise(nextExerciseToLoad:Int) {
-        //print("\(nextExerciseToLoad)")
         handleSegementedControlForAlternateExercises(nextExerciseToLoad)
         clock.revertTimer(nextExerciseToLoad)
         updateNextWorkoutName(nextExerciseToLoad)
-        loadExerciseImage(nextExerciseToLoad)
-        setUpExerciseImageAnimation(nextExerciseToLoad)
+        stopAnimation.loadExerciseImage(nextExerciseToLoad,workoutIndex:workoutIndex,currentExercise:currentExercise)
+        stopAnimation.setUpExerciseImageAnimation(nextExerciseToLoad,workoutIndex: workoutIndex)
         updateWorkoutName(nextExerciseToLoad)
+        //new
+        currentExercise = nextExerciseToLoad
     }
     
     func timerCompleted() {
@@ -581,7 +428,8 @@ class CountDownTimerViewController: UIViewController, ClockTimerDelegate, UIPopo
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
-        exerciseImage.stopAnimating()
+        //exerciseImage.stopAnimating()
+        stopAnimation.stopAnimating()
     }
     
     

@@ -32,6 +32,8 @@
 		81CAC4A31ADBECD600F1BEE1 /* CountDownTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A21ADBECD600F1BEE1 /* CountDownTimerVC.swift */; };
 		81CAC4A51ADD7C0500F1BEE1 /* IndividualLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A41ADD7C0500F1BEE1 /* IndividualLevel.swift */; };
 		81CAC4A71ADD7DC000F1BEE1 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CAC4A61ADD7DC000F1BEE1 /* PageController.swift */; };
+		81DCBF571C909A16008DD5F1 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCBF561C909A16008DD5F1 /* SoundHelper.swift */; };
+		81DCBF591C90B5B2008DD5F1 /* StopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCBF581C90B5B2008DD5F1 /* StopAnimation.swift */; };
 		81E7A2AD1C6933C70055A820 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2AC1C6933C70055A820 /* Exercise.swift */; };
 		81E7A2AF1C6934680055A820 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2AE1C6934680055A820 /* Workout.swift */; };
 		81E7A2B11C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7A2B01C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift */; };
@@ -88,6 +90,8 @@
 		81CAC4A21ADBECD600F1BEE1 /* CountDownTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerVC.swift; sourceTree = "<group>"; };
 		81CAC4A41ADD7C0500F1BEE1 /* IndividualLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualLevel.swift; sourceTree = "<group>"; };
 		81CAC4A61ADD7DC000F1BEE1 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		81DCBF561C909A16008DD5F1 /* SoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
+		81DCBF581C90B5B2008DD5F1 /* StopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopAnimation.swift; sourceTree = "<group>"; };
 		81E7A2AC1C6933C70055A820 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		81E7A2AE1C6934680055A820 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		81E7A2B01C6A73380055A820 /* 11MinuteWorkoutStandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 11MinuteWorkoutStandardViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				81E7A2B91C6D16480055A820 /* Exercise Resume Helper.swift */,
 				81E7A2BB1C6D165A0055A820 /* 7Exercise.swift */,
 				81E7A2BD1C6D16C20055A820 /* 7Overview.swift */,
+				81DCBF561C909A16008DD5F1 /* SoundHelper.swift */,
+				81DCBF581C90B5B2008DD5F1 /* StopAnimation.swift */,
 			);
 			name = "Workout Group";
 			sourceTree = "<group>";
@@ -366,7 +372,9 @@
 				81EA31C81B69184500E155F6 /* RecordResultsViewController.swift in Sources */,
 				81F3F5991AE81841006FD057 /* ExerciseInfo.swift in Sources */,
 				815C23181AFA677200C5A9C1 /* SquareColorIcon.swift in Sources */,
+				81DCBF571C909A16008DD5F1 /* SoundHelper.swift in Sources */,
 				811539D51C75077F000AF0C4 /* SmoothCountdownCircleView.swift in Sources */,
+				81DCBF591C90B5B2008DD5F1 /* StopAnimation.swift in Sources */,
 				811991C71AF3C0D30083967D /* CompletedWorkout.swift in Sources */,
 				81B428311AD5717A00CCC7DE /* AppDelegate.swift in Sources */,
 				81073CC91B31BDE500876D70 /* CountUpTimer.swift in Sources */,
