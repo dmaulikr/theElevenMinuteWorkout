@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Stationary Run with Scissor Jumps</string>
+	<key>Instructions</key>
+	<string>Run in place, lifting your feet approximately 4 inches off of the floor. Every time your left foot touches the floor, count 1 step. Every 75 steps, do 10 scissor jumps. To do a scissor jump, stand with your right leg and left arm extended forward and your left leg and right arm extended backward. Jump up, switching the position of your arms and legs before landing.</string>
+	<key>LengthInSeconds</key>
+	<integer>60</integer>
+	<key>MinimumScoreForGrade</key>
+	<array>
+		<integer>100</integer>
+		<integer>145</integer>
+		<integer>175</integer>
+		<integer>205</integer>
+		<integer>235</integer>
+		<integer>260</integer>
+		<integer>280</integer>
+		<integer>305</integer>
+		<integer>320</integer>
+		<integer>335</integer>
+		<integer>375</integer>
+		<integer>400</integer>
+	</array>
+</dict>
+</plist>
